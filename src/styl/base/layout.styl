@@ -1,0 +1,110 @@
+/* ==========================================================================
+  BASIC - LAYOUT
+   ========================================================================== */
+html, body {
+  background: $white;
+  font: normal $font-size-base/1.5 $font-base;
+  color: $black;
+  overflow-x: hidden;
+  
+  .is-scrolling {
+    pointer-events: none;
+  }
+}
+body {
+  min-width: initial;
+}
+.l-container {
+  relative();
+  margin-right: auto
+  margin-left: auto
+  width: 100%;
+  max-width: 76rem;
+  //min-width: ($container-widths.min + $grid-gutter);
+  //max-width: ($container-widths.max + $grid-gutter);
+  //padding: 0 ($grid-gutter / 2);
+  padding: 0 2rem;
+
+  @media $display-breakpoints.lg-nad-down {
+    width: 75.25vw;
+    padding: 0 2vw;
+  }
+}
+
+.layout {
+  min-size($container-widths.min, 100vh);
+  width: 100vw;
+  
+  flexy(flex-start, center, nowrap, column);
+
+  > div:not(.g-application) {
+    width: 100%;
+    flex: 0 0 auto;
+    
+    ^[0]--home & {
+      opacity: 0;
+      .is-loaded & {
+        opacity: 1;
+      }
+    }
+  }
+  .page {
+    flex-grow: 1;
+    opacity: 1;
+  }
+}
+
+
+.layout {
+  transition: filter 0.5s;
+
+  .rotate & {
+    filter: blur(10px);
+  }
+}
+
+.page-rotate {
+  display: none;
+  fixed(0px, 0px);
+  size(100%);
+  z-index: 999;
+  background: url('../img/rotate.png') center no-repeat;
+}
+
+.l-spacer {
+  flex-grow: 1
+}
+
+.l-float {
+  &--left {
+    float: left;
+    
+    ^[0]--outside& {
+      margin-left: -52%;
+    }
+  }
+  &--right {
+    float: right;
+  
+    ^[0]--outside& {
+      margin-right: -52%;
+    }
+  }
+  &--outside {
+    width: 75%;
+  }
+}
+
+.st {
+  position: static;
+}
+
+video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body > canvas, .wave-image {
+  display: none;
+}

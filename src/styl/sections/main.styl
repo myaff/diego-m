@@ -1,0 +1,137 @@
+.section-main {
+  size(100%, 100vh);
+  background: url('../img/bg-sky.jpg') center no-repeat;
+  background-size: cover;
+  z-index: 3;
+
+  &__util {
+    absolute(0px, 2rem, 0px, 2rem);
+
+    @media $mdHeight {
+      left: vh(32);
+      right: vh(32);
+    }
+  }
+
+  &__project {
+    absolute(11vh);
+    right: 0;
+    transform: rotate(-90deg);
+    transform-origin: bottom right;
+    .text {
+      font: 1.5rem/1 $font-accent;
+      text-transform: uppercase;
+
+      @media $mdHeight {
+        font-size: vh(24);
+      }
+    }
+  }
+  &__scroll {
+    absolute(0, 0px, 3.5vh);
+    transform: rotate(-90deg);
+    transform-origin: top left;
+
+    &::before {
+      content: '';
+      display: block;
+      size(12vh, 1px);
+      absolute(50%);
+      right: 100%;
+      background: currentColor;
+    }
+
+    .text {
+      font: 1.125rem/1 $font-util;
+      letter-spacing: 0.01em;
+      padding-left: 0.5em;
+
+      @media $mdHeight {
+        font-size: vh(1.125 * 16);
+      }
+    }
+  }
+
+  &__content {
+    size(100%, 100vh);
+    padding-top: 10.5rem;
+    flexy(flex-start, flex-start);
+    color: $black2;
+
+    @media $mdHeight {
+      padding-top: vh(10.5 * 16);
+    }
+  }
+
+  &__heading {
+    flex: 0 0 50%;
+    padding-top: 8vh;
+    text-align: center;
+    transform: translateX(-50vw);
+    transition: transform 1.5s;
+    
+    .is-loaded & {
+      transform: translateX(0);
+    }
+
+    .logo {
+      margin-bottom: 1.25rem;
+      opacity: 0;
+      transition: opacity 1s 1.5s;
+
+      .is-loaded & {
+        opacity: 1;
+      }
+
+      @media $mdHeight {
+        margin-bottom: vh(20);
+      }
+      
+      img {
+        max-width: 12.5rem;
+
+        @media $mdHeight {
+          max-width: vh(12.5 * 16);
+        }
+      }
+    }
+
+    .heading {
+      font: bold 85px/1 $font-accent;
+      text-transform: uppercase;
+
+      @media $mdHeight {
+        font-size: vh(85);
+      }
+    }
+
+    .subheading {
+      font: 36.5px/1 $font-accent;
+      margin-top: 2rem;
+      text-transform: uppercase;
+
+      @media $mdHeight {
+        font-size: vh(36.5);
+        margin-top: vh(32);
+      }
+    }
+  }
+
+  &__img {
+    flex: 0 0 50%;
+    height: 100%;
+    align-self: flex-end;
+    flexy(flex-start, flex-end);
+    transform: translateX(50vw);
+    transition: transform 1.5s;
+
+    .is-loaded & {
+      transform: translateX(0);
+    }
+    
+    img {
+      display block;
+      max-size(100%);
+    }
+  }
+}

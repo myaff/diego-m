@@ -59,3 +59,11 @@ typings/
 
 # next.js build output
 .next
+
+# design
+design/*
+build/*
+mobile/*
+
+# gulp
+gulpfile.js

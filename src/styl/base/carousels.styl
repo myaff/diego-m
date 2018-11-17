@@ -1,0 +1,40 @@
+.owl-carousel {
+  
+  .owl-nav {
+    absolute(50%);
+    right: 0;
+    width: 100%;
+    max-width: 630px;
+
+    @media $display-breakpoints.lg-and-down {
+      max-width: vw(630);
+    }
+  }
+  .owl-prev,
+  .owl-next {
+    absolute(-17px);
+    size(34px);
+    cursor: pointer;
+    color: $white;
+
+    @media $display-breakpoints.lg-and-down {
+      top: vw(-17);
+      size(vw(34));
+    }
+
+    &.disabled {
+      opacity: 0;
+    }
+  }
+  .owl-prev {
+    left: 0;
+    background: url('../img/arr_prev.png') center no-repeat;
+    background-size: contain;
+
+  }
+  .owl-next {
+    right: 0;
+    background: url('../img/arr_next.png') center no-repeat;
+    background-size: contain;
+  }
+}

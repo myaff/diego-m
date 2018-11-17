@@ -1,0 +1,123 @@
+$color-pack = false;
+$use-fonts = true;
+$use-fonts-extended = false;
+$show-demo-menu = false;
+$use-grid = false;
+$use-spacing = false;
+$use-modal = false;
+
+
+// Plugins
+// ============================================================
+$use-carousel = true;
+$use-lightbox = false;
+$use-fullpage = false;
+$use-cropper = false;
+
+// Fonts
+// ============================================================
+$font-base = 'ElleMagazinePro', Roboto, Helvetica, Arial, sans-serif;
+$font-accent = Georgia, serif;
+$font-accent2 = 'ElleMan', Georgia, serif;
+$font-util = Roboto, Helvetica, Arial, sans-serif;
+$font-size-base = 16px;
+// fonts to include
+$fonts-path = '../assets/fonts/';
+$fonts-arr = {
+  'ElleMagazinePro': {
+    name: "ElleMagazinePro",
+    file: ElleMagProLig,
+    weight: 300,
+    style: normal
+  },
+  'ElleMan': {
+    name: "ElleMan",
+    file: ELLEMAN-REGULARITALIC,
+    weight: normal,
+    style: italic
+  }
+};
+
+//Colors
+$white = #ffffff;
+$black = #000000;
+$black2 = #232323;
+$grey = #312e2e;
+$primary = #dbbad2;
+$secondary = #d10b76;
+$thirdly = #bb2f8f;
+
+
+// Grid
+// ============================================================
+$grid-breakpoints := {
+  xs: 0
+  ms: 480px
+  sm: 768px
+  md: 1024px
+  lg: 1280px
+  xl: 1600px
+  //lg: (1440px - 16px) // Desktop gets a 16dp reduction
+  //xl: (1920px - 16px) // https://material.io/guidelines/layout/responsive-ui.html#responsive-ui-breakpoints
+}
+
+$header-height = 60px;
+
+$container-widths = {
+  min: 20rem, // 320px
+  max: 76rem // 1160px
+}
+
+
+$grid-gutter = 2.5rem
+$grid-gutter-mobile = 1rem
+$grid-columns = 12
+
+
+
+// Display
+// ============================================================
+$display-breakpoints := {
+  xs-only: "only screen and (max-width: %s)" % ($grid-breakpoints.ms - 1)
+  ms-only: "only screen and (min-width: %s) and (max-width: %s)" % ($grid-breakpoints.ms ($grid-breakpoints.sm - 1))
+  ms-and-down: "only screen and (max-width: %s)" % ($grid-breakpoints.sm - 1)
+  ms-and-up: "only screen and (min-width: %s)" % $grid-breakpoints.ms
+  sm-only: "only screen and (min-width: %s) and (max-width: %s)" % ($grid-breakpoints.sm ($grid-breakpoints.md - 1))
+  sm-and-down: "only screen and (max-width: %s)" % ($grid-breakpoints.md - 1)
+  sm-and-up: "only screen and (min-width: %s)" % $grid-breakpoints.sm
+  md-only: "only screen and (min-width: %s) and (max-width: %s)" % ($grid-breakpoints.md ($grid-breakpoints.lg  - 1))
+  md-and-down: "only screen and (max-width: %s )" % ($grid-breakpoints.lg - 1)
+  md-and-up: "only screen and (min-width: %s)" % $grid-breakpoints.md
+  lg-only: "only screen and (min-width: %s) and (max-width: %s)" % ($grid-breakpoints.lg ($grid-breakpoints.xl - 1))
+  lg-and-down: "only screen and (max-width: 1616px)"
+  lg-and-up: "only screen and (min-width: %s)" % $grid-breakpoints.lg
+  xl-only: "only screen and (min-width: %s)" % $grid-breakpoints.xl
+}
+
+// State selectors
+hover-focus = '&:hover,&.is-hover,&:focus,&.is-focus';
+active = '&:active,&.is-active';
+hover-focus-active = '&:hover,&.is-hover,&:focus,&.is-focus,&:active,&.is-active';
+
+$mobile = 'screen and (max-width: 1024px)';
+$desktop = 'screen and (min-width: 990px)';
+
+$xsHeight = 'screen and (max-height: 450px)';
+$xsWidth = 'screen and (max-width: 450px)';
+$msWidth = 'screen and (max-width: 768px)';
+$smWidth = 'screen and (max-width: 1024px)';
+$smHeight = 'screen and (max-height: 768px)';
+$smWidthLand = 'screen and (max-width: 1024px) and (orientation: landscape)';
+$smWidthPort = 'screen and (max-width: 1024px) and (orientation: portrait)';
+$mdHeight = 'screen and (max-height: 1076px)';
+$mdWidth = 'screen and (max-width: 1309px)';
+$lgHeight = 'screen and (min-height: 1077px)';
+$lgWidth = 'screen and (min-width: 1310px)';
+
+$mDesktop = 'screen and (max-width: 1600px)';
+$sDesktop = 'screen and (max-width: 1280px)';
+$xsDesktop = 'screen and (max-width: 1024px)';
+
+
+$land = 'screen and (orientation: landscape)';
+$port = 'screen and (orientation: portrait)';

@@ -1,0 +1,9 @@
+extends template
+
+prepend page
+	- var layout = 'home';
+	- var currentPage = 'home';
+
+block content
+	.page(class="page--" + currentPage)
+		

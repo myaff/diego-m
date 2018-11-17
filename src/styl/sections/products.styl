@@ -1,0 +1,137 @@
+.section-products {
+  &__content {
+    padding: 40px 0;
+
+    @media $display-breakpoints.lg-and-down {
+      padding: vw(40) 0;
+    }
+    
+    &::before {
+      content: '';
+      absolute(0px, 0, 0px);
+      left: calc((100vw - 100%) / -2);
+      right: 420px;
+      background: $primary;
+
+      @media $display-breakpoints.lg-and-down {
+        right: vw(420);
+      }
+    }
+  }
+
+  &__title {
+    font: bold 1.5rem/1.5 $font-util;
+    absolute(206px, 50%);
+    max-width: 270px;
+    margin-left: -350px;
+
+    @media $display-breakpoints.lg-and-down {
+      font-size: vw(24);
+      top: vw(206);
+      max-width: vw(270);
+      margin-left: vw(-350);
+    }
+  }
+
+  .owl-carousel {
+
+    .owl-stage-outer {
+      padding-left: calc(50% - 225px);
+      padding-right: 250px;
+      margin-left: 225px;
+
+      @media $display-breakpoints.lg-and-down {
+        padding-left: calc(50% - 13.92vw);
+        padding-right: vw(250);
+        margin-left: vw(225);
+      }
+    }
+
+    .owl-stage {
+      flexy(flex-start, stretch);
+    }
+
+    .owl-item {
+      flex: 0 0 auto;
+      flexy(center, center);
+      min-height: 500px;
+      overflow: hidden;
+      opacity: 0;
+      transition: none;
+      float: none;
+
+      @media $display-breakpoints.lg-and-down {
+        min-height: vw(500);
+      }
+
+      .item {
+        width: 190px;
+        transition: width 0.3s;
+        //width: 330px;
+
+        @media $display-breakpoints.lg-and-down {
+          width: vw(190);
+        }
+
+        .item-img {
+
+          img {
+            display block;
+            width: 100%;
+          }
+          //transform: scale(0.6);
+          //transform-origin: left center;
+          //transition: transform 0.3s;
+        }
+
+        .item-title {
+          opacity: 0;
+          transition: opacity 0.1s;
+        }
+      }
+
+      &.visible {
+        overflow: visible;
+        opacity: 1;
+        width: 330px;
+
+        @media $display-breakpoints.lg-and-down {
+          width: vw(330);
+        }
+
+        .item {
+          width: 330px;
+
+          @media $display-breakpoints.lg-and-down {
+            width: vw(330);
+          }
+        }
+
+        .item-img {
+          //transform: scale(1);
+        }
+        .item-title {
+          opacity: 1;
+          transition: opacity 0.3s 0.3s;
+        }
+
+        & + .owl-item {
+          opacity: 1;
+        }
+      }
+
+      .item-title {
+        font: 1.25rem/1.2 $font-util;
+        absolute(256px, -350px);
+        max-width: 270px;
+
+        @media $display-breakpoints.lg-and-down {
+          font-size: vw(20);
+          top: vw(256);
+          left: vw(-350);
+          max-width: vw(270);
+        }
+      }
+    }
+  }
+}

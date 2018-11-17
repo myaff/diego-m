@@ -1,0 +1,50 @@
+extends template
+
+prepend page
+	- var layout = 'home';
+	- var currentPage = 'home';
+	- var pageTitle = settings.ogDefaults.title;
+	- var pageDesc = settings.ogDefaults.description;
+	- var pageImg = settings.ogDefaults.image;
+
+block content
+	.page(class="page--" + currentPage)
+		section.section-main
+			.l-container
+				.section-main__util
+					.section-main__project
+						.text !{data.main.project}
+					.section-main__scroll
+						.text !{data.main.util}
+				.section-main__content
+					.section-main__heading
+						.logo: img(src="build/img/logo.png", alt="Diego M")
+						.heading !{data.main.heading}
+						.subheading !{data.main.subheading}
+					.section-main__img: img(src="build/img/maria.png", alt="Мария Кожевникова")
+		section.section-photos
+			.l-container
+				.section-photos__heading
+					.heading !{data.photos.heading}
+					.text 
+						p !{data.photos.headingText}
+				.section-photos__grid.photo-grid
+					each n in [1, 2, 3, 4, 5, 6, 7, 8]
+						.photo-grid__item.a-scroll-box(class="photo-grid__item--" + n)
+							.inner
+								img.photo-grid__img(src="build/img/photos/" + n + ".jpg", alt="")
+								img.photo-grid__img.hover(src="build/img/photos/" + n + "-c.jpg", alt="")
+				.section-photos__texts
+					.text--1
+						.text
+							p !{data.photos.text1}
+					.text--2
+						.text
+							p !{data.photos.text2}
+					.highlight
+						p !{data.photos.highlight}
+		section.section-products
+			.l-container
+				.section-products__content
+					.section-products__title !{data.products.title}
+					+carousel(data.products.ps)

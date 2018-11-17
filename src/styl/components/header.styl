@@ -1,0 +1,45 @@
+.header {
+	absolute(0px, 0px);
+	width: 100%;
+	z-index: 9;
+	background: transparent;
+	color: $black;
+
+	a {
+		color: inherit;
+	}
+
+	&__content {
+		flexy(flex-start, flex-start);
+		padding: 3rem 0;
+
+		@media $mdHeight {
+			padding: vh(48);
+		}
+	}
+
+	&__logo {
+		flex: 0 0 50%;
+
+		.icon {
+			size(9.5rem, 4.5rem);
+
+			@media $mdHeight {
+				size(vh(9.5 * 16), vh(4.5 * 16));
+			}
+		}
+	}
+
+	&__title {
+		flex: 0 0 50%;
+		padding: 1.5rem 3.25rem;
+		font: 1.25rem/1 $font-util;
+		letter-spacing: 0.01em;
+
+		@media $mdHeight {
+			padding: vh(24);
+			font-size: vh(20);
+		}
+	}
+	
+}

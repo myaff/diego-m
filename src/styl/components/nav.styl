@@ -1,0 +1,123 @@
+.nav {
+
+  @media $msWidth {
+    display: none;
+    fixed(0px, 0px);
+    size(100%);
+    background: url('../img/logo-img.png') center no-repeat;
+    background-size: 80vmin auto;
+    background-color: $primary;
+    padding: 30vmin 6vw 20vmin;
+  }
+  @media $port {
+    padding: 24vmin 6vw 15vmin;
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    flexy(center, center);
+
+    @media $msWidth {
+      height: 100%;
+      flex-flow: column wrap;
+      align-items: flex-start;
+    }
+  }
+  &__item {
+    display: block;
+    padding: 0;
+    margin: 0 10px;
+
+    @media $land {
+      &.socials {
+        display none;
+      }
+    }
+
+    @media $msWidth {
+      margin: 4.5vmin 0;
+    }
+  }
+  &__link {
+    display: block;
+    text-align: center;
+    font: 14px/1 $font-accent;
+    text-transform: uppercase;
+    color: $white;
+
+    @media $msWidth {
+      text-align: left;
+    }
+
+    &.default {
+      &.active {
+        text-decoration: underline;
+        cursor: default;
+      }
+
+      @media $msWidth {
+        font-size: 9vmin;
+        font-weight: 900;
+
+        &.active {
+          text-decoration: none;
+        }
+      }
+    }
+
+    &.btn {
+      font-weight: 500;
+      padding: 0.5em 0.75rem;
+      border: 1px solid currentColor;
+
+      @media $msWidth {
+        font-size: 3vmin;
+        padding: 1.5em;
+        background: $white;
+        color: $primary;
+      }
+    }
+  }
+}
+
+.btn-menu {
+  size(30px);
+  z-index: 9;
+  display: none;
+
+  @media $msWidth {
+    display: block;
+  }
+
+  div {
+    absolute(50%, 0);
+    size(100%, 4px);
+    background: currentColor;
+    transition: transform 0.3s;
+    transform-origin: center;
+
+    &:first-child {
+      transform: translateY(-10px);
+    }
+
+    &:last-child {
+      transform: translateY(10px);
+    }
+  }
+
+  &.is-open {
+    div {
+      &:first-child {
+        transform: translateY(0) rotate(45deg);
+      }
+      &:nth-child(2) {
+        transform: scaleX(0);
+      }
+      &:last-child {
+        transform: translateY(0) rotate(-45deg);
+      }
+    }
+  }
+}
