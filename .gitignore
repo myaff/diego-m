@@ -62,7 +62,6 @@ typings/
 
 # design
 design/*
-build/*
 mobile/*
 
 # gulp
