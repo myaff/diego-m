@@ -6,16 +6,33 @@
   text-transform: uppercase;
   text-align: center;
 
+  .layout--mobile & {
+    padding: vw(30, 640) 0;
+    font-size: vw(18, 640);
+  }
+
   &-logo {
     margin-bottom: 3.5rem;
 
+    .layout--mobile & {
+      margin-bottom: vw(48, 640);
+    }
+
     img {
       max-width: 10rem;
+
+      .layout--mobile & {
+        max-width: vw(166, 640);
+      }
     }
   }
 
   &-addresses {
     margin-bottom: 3rem;
+
+    .layout--mobile & {
+      margin-bottom: vw(20, 640);
+    }
 
     &__title {
       margin-bottom: 1em;
@@ -23,11 +40,19 @@
 
     &__item {
       margin-top: 1em;
+
+      .layout--mobile & {
+        margin-top: vw(30, 640);
+      }
     }
   }
 
   &-follow {
     margin-bottom: 1.5rem;
+
+    .layout--mobile & {
+      margin-bottom: vw(48, 640);
+    }
 
     &__title {
       margin-bottom: 1em;
@@ -39,9 +64,15 @@
 
     &__item {
       flex: 0 0 2.5rem;
-      circle(2.5rem);
+      circle(2.5rem, 50%);
       background: $white;
       margin: 0 0.25rem;
+
+      .layout--mobile & {
+        flex-basis: vw(70, 640);
+        size(vw(70, 640));
+        margin: 0 vw(18, 640);
+      }
     }
 
     &__link {
@@ -51,10 +82,20 @@
       line-height: 1;
       color: $grey;
       text-decoration: none;
+
+      .layout--mobile & {
+        font-size: vw(40, 640);
+      }
     }
   }
 
   &-text {
+
+    .layout--mobile & {
+      font-size: vw(14, 640);
+      max-width: vw(430, 640);
+      margin: 0 auto;
+    }
     
     a {
       color: inherit;

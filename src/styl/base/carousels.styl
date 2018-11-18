@@ -9,6 +9,12 @@
     @media $display-breakpoints.lg-and-down {
       max-width: vw(630);
     }
+
+    .layout--mobile & {
+      max-width: 100%;
+      top: auto;
+      bottom: vw(260, 640);
+    }
   }
   .owl-prev,
   .owl-next {
@@ -22,6 +28,11 @@
       size(vw(34));
     }
 
+    .layout--mobile & {
+      size(vw(34, 640));
+      top: vw(-17, 640);
+    }
+
     &.disabled {
       opacity: 0;
     }
@@ -31,10 +42,18 @@
     background: url('../img/arr_prev.png') center no-repeat;
     background-size: contain;
 
+    .layout--mobile & {
+      left: vw(20, 640);
+    }
+
   }
   .owl-next {
     right: 0;
     background: url('../img/arr_next.png') center no-repeat;
     background-size: contain;
+
+    .layout--mobile & {
+      right: vw(20, 640);
+    }
   }
 }

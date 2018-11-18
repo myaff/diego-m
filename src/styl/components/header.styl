@@ -5,6 +5,11 @@
 	background: transparent;
 	color: $black;
 
+	.layout--mobile & {
+		position: relative;
+		background: $white;
+	}
+
 	a {
 		color: inherit;
 	}
@@ -16,6 +21,12 @@
 		@media $mdHeight {
 			padding: vh(48);
 		}
+
+		.layout--mobile & {
+			justify-content: space-between;
+			align-items: center;
+			padding: vw(25, 640) 0;
+		}
 	}
 
 	&__logo {
@@ -26,6 +37,10 @@
 
 			@media $mdHeight {
 				size(vh(9.5 * 16), vh(4.5 * 16));
+			}
+
+			.layout--mobile & {
+				size(vw(92, 640), vw(40, 640));
 			}
 		}
 	}
@@ -39,6 +54,12 @@
 		@media $mdHeight {
 			padding: vh(24);
 			font-size: vh(20);
+		}
+
+		.layout--mobile & {
+			padding: 0;
+			font: vw(16, 640) $font-accent;
+			text-align: right;
 		}
 	}
 	

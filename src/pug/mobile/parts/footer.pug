@@ -2,3 +2,15 @@ include ../mixins
 .footer
   .l-container
     .footer__content
+      .footer-logo: img(src="../build/img/logo-light.png")
+      .footer-addresses
+        .footer-addresses__list
+          each address in data.footer.addresses.as
+            .footer-addresses__item !{address}
+      .footer-follow
+        .footer-follow__list
+          each item in data.footer.follow.fs
+            .footer-follow__item
+              a.footer-follow__link(href=item.url, alt=item.title)
+                +icon(item.icon)
+      .footer-text !{data.footer.text}

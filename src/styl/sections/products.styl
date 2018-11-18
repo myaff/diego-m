@@ -5,6 +5,10 @@
     @media $display-breakpoints.lg-and-down {
       padding: vw(40) 0;
     }
+
+    .layout--mobile & {
+      padding: vw(60, 640) 0;
+    }
     
     &::before {
       content: '';
@@ -15,6 +19,13 @@
 
       @media $display-breakpoints.lg-and-down {
         right: vw(420);
+      }
+
+      .layout--mobile & {
+        right: calc((100vw - 100%) / -2);
+        top: 0;
+        bottom: auto;
+        height: vw(286, 640);
       }
     }
   }
@@ -31,19 +42,37 @@
       max-width: vw(270);
       margin-left: vw(-350);
     }
+
+    .layout--mobile & {
+      font-size: vw(24, 640);
+      relative(0px, 0px);
+      max-width: vw(260, 640);
+      margin: 0 auto vw(40, 640);
+    }
   }
 
   .owl-carousel {
 
-    .owl-stage-outer {
-      padding-left: calc(50% - 225px);
-      padding-right: 250px;
-      margin-left: 225px;
+    .layout--mobile & {
+      padding: 0 vw(75, 640);
+    }
 
-      @media $display-breakpoints.lg-and-down {
-        padding-left: calc(50% - 13.92vw);
-        padding-right: vw(250);
-        margin-left: vw(225);
+    .owl-stage-outer {
+
+      .layout--desktop & {
+        padding-left: calc(50% - 225px);
+        padding-right: 250px;
+        margin-left: 225px;
+
+        @media $display-breakpoints.lg-and-down {
+          padding-left: calc(50% - 13.92vw);
+          padding-right: vw(250);
+          margin-left: vw(225);
+        }
+      }
+
+      .layout--mobile & {
+        padding: 0;
       }
     }
 
@@ -64,6 +93,10 @@
         min-height: vw(500);
       }
 
+      .layout--mobile & {
+        min-height: vw(640, 640);
+      }
+
       .item {
         width: 190px;
         transition: width 0.3s;
@@ -71,6 +104,10 @@
 
         @media $display-breakpoints.lg-and-down {
           width: vw(190);
+        }
+
+        .layout--mobile & {
+          width: vw(430, 640);
         }
 
         .item-img {
@@ -99,11 +136,19 @@
           width: vw(330);
         }
 
+        .layout--mobile & {
+          width: vw(430, 640);
+        }
+
         .item {
           width: 330px;
 
           @media $display-breakpoints.lg-and-down {
             width: vw(330);
+          }
+
+          .layout--mobile & {
+            width: vw(430, 640);
           }
         }
 
@@ -130,6 +175,13 @@
           top: vw(256);
           left: vw(-350);
           max-width: vw(270);
+        }
+
+        .layout--mobile & {
+          font-size: vw(20, 640);
+          relative(0px, 0px);
+          max-width: vw(260, 640);
+          margin: 0 auto vw(100, 640);
         }
       }
     }

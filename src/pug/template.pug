@@ -24,7 +24,7 @@ block page
       .svg-sprite
       script
         | $('.svg-sprite').html(SVG_SPRITE);
-      .layout(class="layout--" + layout)
+      .layout.layout--desktop(class="layout--" + layout)
         include parts/header
         block content
         include parts/footer

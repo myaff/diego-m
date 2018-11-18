@@ -3,6 +3,7 @@
   background: url('../img/bg-sky.jpg') center no-repeat;
   background-size: cover;
   z-index: 3;
+  overflow: hidden;
 
   &__util {
     absolute(0px, 2rem, 0px, 2rem);
@@ -61,30 +62,51 @@
     @media $mdHeight {
       padding-top: vh(10.5 * 16);
     }
+
+    .layout--mobile & {
+      padding-top: vh(20, 1076);
+      display: block;
+    }
   }
 
   &__heading {
     flex: 0 0 50%;
     padding-top: 8vh;
     text-align: center;
-    transform: translateX(-50vw);
-    transition: transform 1.5s;
-    
-    .is-loaded & {
-      transform: translateX(0);
+
+    .layout--desktop & {
+      transform: translateX(-50vw);
+      transition: transform 1.5s;
+      
+      .is-loaded & {
+        transform: translateX(0);
+      }
+    }
+
+    .layout--mobile & {
+      padding-top: 0;
+      max-width: vh(430, 1076);
+      margin: 0 auto vh(20, 1076);
     }
 
     .logo {
       margin-bottom: 1.25rem;
-      opacity: 0;
-      transition: opacity 1s 1.5s;
 
-      .is-loaded & {
-        opacity: 1;
+      .layout--desktop & {
+        opacity: 0;
+        transition: opacity 1s 1.5s;
+
+        .is-loaded & {
+          opacity: 1;
+        }
       }
 
       @media $mdHeight {
         margin-bottom: vh(20);
+      }
+
+      .layout--mobile & {
+        margin-bottom: vh(18, 1076);
       }
       
       img {
@@ -92,6 +114,10 @@
 
         @media $mdHeight {
           max-width: vh(12.5 * 16);
+        }
+
+        .layout--mobile & {
+          max-width: vh(160, 1076);
         }
       }
     }
@@ -102,6 +128,10 @@
 
       @media $mdHeight {
         font-size: vh(85);
+      }
+
+      .layout--mobile & {
+        font-size: vh(64.4, 1076);
       }
     }
 
@@ -114,6 +144,11 @@
         font-size: vh(36.5);
         margin-top: vh(32);
       }
+
+      .layout--mobile & {
+        font-size: vh(28, 1076);
+        margin-top: vh(30, 1076);
+      }
     }
   }
 
@@ -122,11 +157,19 @@
     height: 100%;
     align-self: flex-end;
     flexy(flex-start, flex-end);
-    transform: translateX(50vw);
-    transition: transform 1.5s;
 
-    .is-loaded & {
-      transform: translateX(0);
+    .layout--desktop & {
+      transform: translateX(50vw);
+      transition: transform 1.5s;
+
+      .is-loaded & {
+        transform: translateX(0);
+      }
+    }
+
+    .layout--mobile & {
+      justify-content: flex-end;
+      height: vh(680, 1076);
     }
     
     img {

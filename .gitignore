@@ -62,7 +62,6 @@ typings/
 
 # design
 design/*
-mobile/*
 
 # gulp
 gulpfile.js
