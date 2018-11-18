@@ -190,6 +190,7 @@ function init(){
   });
   
   $(window).on('resize', function () {
+    $('html, body').removeClass('is-loaded');
     timer = new Date();
     if (timeout === false) {
       timeout = true;

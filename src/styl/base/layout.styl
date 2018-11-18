@@ -14,6 +14,7 @@ html, body {
 body {
   min-width: initial;
 }
+
 .l-container {
   relative();
   margin-right: auto
@@ -62,7 +63,7 @@ body {
 
 
 .layout {
-  transition: filter 0.5s;
+  transition: filter 0.5s, opacity 0.5s;
 
   .rotate & {
     filter: blur(10px);
@@ -75,6 +76,21 @@ body {
   size(100%);
   z-index: 999;
   background: url('../img/rotate.png') center no-repeat;
+}
+
+.loader {
+  fixed(0px, 0px);
+  size(100%);
+  flexy(center, center);
+  background: url('../img/bg-sky.jpg') center no-repeat;
+  background-size: cover;
+  z-index: 100;
+  transition: opacity 0.3s z-index 0.1s 0.3s;
+
+  .is-loaded & {
+    opacity: 0;
+    z-index: -100;
+  }
 }
 
 .l-spacer {

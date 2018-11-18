@@ -24,6 +24,7 @@ block page
       .svg-sprite
       script
         | $('.svg-sprite').html(SVG_SPRITE);
+      .loader: img.loader__img(src="../build/img/loader.gif", alt="loader")
       .layout.layout--mobile(class="layout--" + layout)
         include parts/header
         block content

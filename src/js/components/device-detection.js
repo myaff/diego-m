@@ -30,12 +30,50 @@ function isMobileVersion(){
   return !!~window.location.href.indexOf("/mobile/");
 }
 
+function redirMobile () {
+  let hash = window.location.hash;
+  let baseUrl = window.location.href.split('/').slice(0,-1).join('/');
+  let pageUrl = window.location.href.split('/').splice(-1,1).join('/');
+  let finalUrl = baseUrl + '/mobile/' + pageUrl;
+  if (hash) {
+    finalUrl += hash;
+  }
+  window.location.href = finalUrl;
+};
+
+function redirDesktop () {
+  let hash = window.location.hash;
+  let baseUrl = window.location.origin;
+  let finalUrl = baseUrl;
+  if (hash) {
+    finalUrl += hash;
+  }
+  window.location.href = finalUrl;
+}
+
+function checkVersion () {
+  if ((isMobile() || isTablet()) && !isMobileVersion()) {
+    redirMobile();
+  }
+
+  if (isDesktop() && isMobileVersion()) {
+    redirDesktop();
+  }
+}
+
 function run(){
+  checkVersion();
+
+  $(window).on('resizeend', function() {
+    checkVersion();
+  });
+
   if(isTouch()){
     $('html').removeClass('no-touch').addClass('touch');
   } else {
     $('html').removeClass('touch').addClass('no-touch');
   }
+
 }
 
 module.exports = {
@@ -47,5 +85,6 @@ module.exports = {
   isDesktopExt,
   isMobileVersion,
   isPortrait,
-  isLandscape
+  isLandscape,
+  checkVersion
 };
