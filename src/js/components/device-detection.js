@@ -54,10 +54,18 @@ function redirDesktop () {
 function checkVersion () {
   if ((isMobile() || isTablet()) && !isMobileVersion()) {
     redirMobile();
+  } else {
+    $.afterlag(function(){
+      $('html').addClass('is-loaded');
+    });
   }
 
   if (isDesktop() && isMobileVersion()) {
     redirDesktop();
+  } else {
+    $.afterlag(function(){
+      $('html').addClass('is-loaded');
+    });
   }
 }
 
