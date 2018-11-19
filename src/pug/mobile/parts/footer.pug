@@ -2,7 +2,8 @@ include ../mixins
 .footer
   .l-container
     .footer__content
-      .footer-logo: img(src="../build/img/logo-light.png")
+      .footer-logo
+        a(href=data.links.diego, target="_blank"): img(src="../build/img/logo-light.png")
       .footer-addresses
         .footer-addresses__list
           each address in data.footer.addresses.as

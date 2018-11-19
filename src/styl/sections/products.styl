@@ -35,6 +35,7 @@
     absolute(206px, 50%);
     max-width: 270px;
     margin-left: -350px;
+    z-index: 3;
 
     @media $display-breakpoints.lg-and-down {
       font-size: vw(24);
@@ -88,6 +89,7 @@
       opacity: 0;
       transition: none;
       float: none;
+      pointer-events: none;
 
       @media $display-breakpoints.lg-and-down {
         min-height: vw(500);
@@ -131,6 +133,7 @@
         overflow: visible;
         opacity: 1;
         width: 330px;
+        pointer-events: initial;
 
         @media $display-breakpoints.lg-and-down {
           width: vw(330);
@@ -166,6 +169,7 @@
       }
 
       .item-title {
+        display: block;
         font: 1.25rem/1.2 $font-util;
         absolute(256px, -350px);
         max-width: 270px;

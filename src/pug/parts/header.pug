@@ -3,5 +3,6 @@ include ../mixins
   .l-container
     .header__content
       .header__logo.header__logo--elle
-        +icon('elle')
+        a(href=data.links.elle, target="_blank")
+          +icon('elle')
       .header__title !{data.main.title}

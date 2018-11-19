@@ -24,12 +24,13 @@ mixin carousel(items, isGallery, galleryName)
 		each item in items
 			.item
 				if item.title
-					.item-title !{item.title}
+					a.item-title(href=item.url, target="_blank") !{item.title}
 				if isGallery
 					a(href=item.img, data-lightbox=galleryName, alt="")
 						.item-img: img(src=item.img, alt="")
 				else
-					.item-img: img(src=item.img, alt="")
+					.item-img
+						a(href=item.url, target="_blank"): img(src=item.img, alt="")
 
 mixin readMore(filter, items)
 	div&attributes(attributes).read-more.mt-2

@@ -18,7 +18,9 @@ block content
 						.text !{data.main.util}
 				.section-main__content
 					.section-main__heading
-						.logo: img(src="build/img/logo.png", alt="Diego M")
+						.logo
+							a(href=data.links.diego, target="_blank")
+								img(src="build/img/logo.png", alt="Diego M")
 						.heading !{data.main.heading}
 						.subheading !{data.main.subheading}
 					.section-main__img: img(src="build/img/maria.png", alt="Мария Кожевникова")

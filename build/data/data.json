@@ -22,27 +22,32 @@
 	},
 	"data": {
 		"products": {
-			"title": "Коллекция пуховиков DIEGO&nbsp;M",
+			"title": "Коллекция пуховиков <a href='https://www.diegom.it/diegoemme/' target='_blank'>DIEGO&nbsp;M</a>",
 			"ps": [
 				{
 					"title": "Утепленная куртка с&nbsp;меховой отделкой",
-					"img": "build/img/products/1.png"
+					"img": "build/img/products/1.png",
+					"url": "#"
 				},
 				{
 					"title": "Утепленная куртка с&nbsp;меховой отделкой&nbsp;2",
-					"img": "build/img/products/2.png"
+					"img": "build/img/products/2.png",
+					"url": "#"
 				},
 				{
 					"title": "Утепленная куртка с&nbsp;меховой отделкой&nbsp;3",
-					"img": "build/img/products/3.png"
+					"img": "build/img/products/3.png",
+					"url": "#"
 				},
 				{
 					"title": "Утепленная куртка с&nbsp;меховой отделкой&nbsp;4",
-					"img": "build/img/products/4.png"
+					"img": "build/img/products/4.png",
+					"url": "#"
 				},
 				{
 					"title": "Утепленная куртка с&nbsp;меховой отделкой&nbsp;5",
-					"img": "build/img/products/5.png"
+					"img": "build/img/products/5.png",
+					"url": "#"
 				}
 			]
 		},
@@ -74,16 +79,20 @@
 					{
 						"title": "Facebook",
 						"icon": "fb",
-						"url": "#"
+						"url": "https://www.facebook.com/DiegoM.milano/"
 					},
 					{
 						"title": "Instagram",
 						"icon": "inst",
-						"url": "#"
+						"url": "https://www.instagram.com/diegom_milano/"
 					}
 				]
 			},
-			"text": "Благодарим гольф&#8209;курорт <a href='#' target='_blank'>MOSCOW COUNTRY CLUB</a> за&nbsp;помощь в&nbsp;организации съемки"
+			"text": "Благодарим гольф&#8209;курорт <a href='http://www.moscowcountryclub.ru/' target='_blank'>MOSCOW COUNTRY CLUB</a> за&nbsp;помощь в&nbsp;организации съемки"
+		},
+		"links": {
+			"diego": "https://www.diegom.it/diegoemme/",
+			"elle": "#"
 		}
 	}
 }
